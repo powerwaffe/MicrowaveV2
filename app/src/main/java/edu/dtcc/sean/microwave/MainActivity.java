@@ -64,8 +64,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int id = v.getId();
         TextView textView = (TextView) findViewById(R.id.timerDisplay);
 
-        String time = textView.getText().toString();
-        long counter = Long.valueOf(textView.getText().toString());
+        //String time = textView.getText().toString();
+        //long counter = Long.valueOf(textView.getText().toString());
 
         switch (id)
         {
