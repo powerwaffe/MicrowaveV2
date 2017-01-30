@@ -90,50 +90,81 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             {
                 // Time has ended, display a message
                 Toast.makeText(getApplicationContext(), "Food is ready!", Toast.LENGTH_LONG).show();
-                textView.setText("000");
+                textView.setText("0");
             }
         };
 
-        // For button presses
+        /** Button Presses */
         switch (id)
         {
             case R.id.button1:
-                textView.append("1");
+                if (textView.getText().equals("0"))
+                    textView.setText("1");
+                else
+                    textView.append("1");
+                //textView.setText("1");
                 break;
             case R.id.button2:
-                textView.append("2");
+                if (textView.getText().equals("0"))
+                    textView.setText("2");
+                else
+                    textView.append("2");
                 break;
             case R.id.button3:
-                textView.append("3");
+                if (textView.getText().equals("0"))
+                    textView.setText("3");
+                else
+                    textView.append("3");
                 break;
             case R.id.button4:
-                textView.append("4");
+                if (textView.getText().equals("0"))
+                    textView.setText("4");
+                else
+                    textView.append("4");
                 break;
             case R.id.button5:
-                textView.append("5");
+                if (textView.getText().equals("0"))
+                    textView.setText("5");
+                else
+                    textView.append("5");
                 break;
             case R.id.button6:
-                textView.append("6");
+                if (textView.getText().equals("0"))
+                    textView.setText("6");
+                else
+                    textView.append("6");
                 break;
             case R.id.button7:
-                textView.append("7");
+                if (textView.getText().equals("0"))
+                    textView.setText("7");
+                else
+                    textView.append("7");
                 break;
             case R.id.button8:
-                textView.append("8");
+                if (textView.getText().equals("0"))
+                    textView.setText("8");
+                else
+                    textView.append("8");
                 break;
             case R.id.button9:
-                textView.append("9");
+                if (textView.getText().equals("0"))
+                    textView.setText("9");
+                else
+                    textView.append("9");
                 break;
             case R.id.button10:
-                textView.append("9");
+                if (textView.getText().equals("0"))
+                    textView.setText("0");
+                else
+                    textView.append("0");
                 break;
             case R.id.buttonStart:
-                // DO COUNTDOWN
-                timer.start();
+                timer.start(); // DO COUNTDOWN
                 break;
             case R.id.buttonStop:
                 /** NOT IMPLEMENTED */
-                textView.setText("000");
+                timer.cancel(); // Doesn't work?
+                textView.setText("0");
         } // end switch statement
     }
 }
