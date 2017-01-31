@@ -1,12 +1,9 @@
 package edu.dtcc.sean.microwave;
 
-import android.content.Intent;
-import android.os.CountDownTimer;
-import android.provider.Settings;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
@@ -74,25 +71,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // create variable to hold TextView input
         String myTime = (textView.getText().toString());
 
-        // Converts myTime variable to integer to be used for countdown
-        int countdownMillis = Integer.parseInt(myTime) * 1000;
+        try {
 
-        // Timer that counts down user's entered time in seconds
-        timer = new CountDownTimer(countdownMillis, 1000)
+
+            // Converts myTime variable to integer to be used for countdown
+            int countdownMillis = Integer.parseInt(myTime) * 1000;
+
+            // Timer that counts down user's entered time in seconds
+            timer = new CountDownTimer(countdownMillis, 1000) {
+                public void onTick(long millisUntilFinished) {
+                    // Counts down user time
+                    int seconds = (int) ((millisUntilFinished));
+                    textView.setText("" + seconds / 1000);
+                }
+
+                public void onFinish() {
+                    // Time has ended, display a message
+                    Toast.makeText(getApplicationContext(), "Food is ready!", Toast.LENGTH_LONG).show();
+                    textView.setText("0");
+                }
+            };
+        }
+        catch (Exception e)
         {
-            public void onTick(long millisUntilFinished)
-            {
-                // Counts down user time
-                int seconds = (int) ((millisUntilFinished));
-                textView.setText("" + seconds / 1000);
-            }
-            public void onFinish()
-            {
-                // Time has ended, display a message
-                Toast.makeText(getApplicationContext(), "Food is ready!", Toast.LENGTH_LONG).show();
-                textView.setText("0");
-            }
-        };
+
+        }
 
         /** Button Presses */
         switch (id)
@@ -164,7 +167,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.buttonStop:
                 /** NOT IMPLEMENTED */
                 timer.cancel(); // Doesn't work?
-                textView.setText("0");
+                textView.setText("");
         } // end switch statement
     }
 }
