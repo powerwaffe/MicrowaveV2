@@ -5,7 +5,9 @@ import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Interpolator;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -74,7 +76,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         try
         {
             // Converts myTime variable to integer to be used for countdown
-            int countdownMillis = Integer.parseInt(myTime) * 1000;
+            final int countdownMillis = Integer.parseInt(myTime) * 1000;
+
+            // Timer for checking if popcorn is burnt
+            final int timerBurnt = Integer.parseInt(myTime);
 
             // Timer that counts down user's entered time in seconds
             timer = new CountDownTimer(countdownMillis, 1000)
@@ -87,6 +92,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 public void onFinish()
                 {
+                    // Set image when timer is finished
+                    ImageView imageView = (ImageView) findViewById(R.id.popcornDisplay);
+                    if (timerBurnt > 230)
+                        // Burned popcorn
+                        imageView.setImageResource(R.drawable.burntpopcorn);
+                    else
+                        // Properly cooked popcorn
+                        imageView.setImageResource(R.drawable.poppedpopcorn);
+
                     // Time has ended, display a message
                     Toast.makeText(getApplicationContext(), "Food is ready!", Toast.LENGTH_LONG).show();
                     textView.setText("0");
