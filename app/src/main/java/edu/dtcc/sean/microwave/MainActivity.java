@@ -66,7 +66,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v)
     {
-        int id = v.getId();
+        int id = v.getId(); // for switch statement
+
+        // Create textView object
         final TextView textView = (TextView) findViewById(R.id.timerDisplay);
 
         // create variable to hold TextView input
@@ -93,16 +95,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 {
                     // Set image when timer is finished
                     ImageView imageView = (ImageView) findViewById(R.id.popcornDisplay);
-                    if (timerBurnt > 230)
+                    if (timerBurnt > 180)
+                    {
                         // Burned popcorn
                         imageView.setImageResource(R.drawable.burntpopcorn);
+                        Toast.makeText(getApplicationContext(), "GET THE FIRE EXTINGUISHER!",
+                                Toast.LENGTH_LONG).show();
+                    }
                     else
+                    {
                         // Properly cooked popcorn
                         imageView.setImageResource(R.drawable.poppedpopcorn);
 
-                    // Time has ended, display a message
-                    Toast.makeText(getApplicationContext(), "Food is ready!", Toast.LENGTH_LONG).show();
-                    textView.setText("0");
+                        // Time has ended, display a message
+                        Toast.makeText(getApplicationContext(), "Food is ready!", Toast.LENGTH_LONG).show();
+                    }
+                    textView.setText("");
                 }
             };
         }
@@ -183,5 +191,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 timer.cancel(); // Doesn't work?
                 textView.setText("");
         } // end switch statement
-    }
-}
+    } // end onClick
+} // end MainActivity
