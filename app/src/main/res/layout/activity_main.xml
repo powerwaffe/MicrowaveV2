@@ -13,7 +13,7 @@
     tools:context="edu.dtcc.sean.microwave.MainActivity">
 
     <Button
-        android:text="3"
+        android:text="@string/_3"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:id="@+id/button3"
@@ -24,7 +24,7 @@
         android:layout_alignParentEnd="true" />
 
     <Button
-        android:text="9"
+        android:text="@string/_9"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:id="@+id/button9"
@@ -37,7 +37,7 @@
         android:layout_below="@+id/button5" />
 
     <Button
-        android:text="8"
+        android:text="@string/_8"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:id="@+id/button8"
@@ -50,7 +50,7 @@
         android:layout_below="@+id/button4" />
 
     <Button
-        android:text="Start"
+        android:text="@string/start"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:background="#333333"
@@ -62,7 +62,7 @@
         android:layout_below="@+id/button9" />
 
     <Button
-        android:text="Stop"
+        android:text="@string/stop"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:id="@+id/buttonStop"
@@ -74,7 +74,7 @@
         android:layout_below="@+id/button9" />
 
     <Button
-        android:text="0"
+        android:text="@string/_0"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:background="#333333"
@@ -85,7 +85,7 @@
         android:layout_toEndOf="@+id/popcornDisplay" />
 
     <Button
-        android:text="1"
+        android:text="@string/_1"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:id="@+id/button1"
@@ -97,7 +97,7 @@
         android:layout_marginTop="45dp" />
 
     <Button
-        android:text="2"
+        android:text="@string/_2"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:id="@+id/button2"
@@ -109,7 +109,7 @@
         android:layout_alignTop="@+id/button1" />
 
     <Button
-        android:text="4"
+        android:text="@string/_4"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:background="#333333"
@@ -120,7 +120,7 @@
         android:layout_toStartOf="@+id/button5" />
 
     <Button
-        android:text="5"
+        android:text="@string/_5"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:background="#333333"
@@ -131,7 +131,7 @@
         android:layout_below="@+id/button3" />
 
     <Button
-        android:text="6"
+        android:text="@string/_6"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:background="#333333"
@@ -143,7 +143,7 @@
         android:layout_below="@+id/button3" />
 
     <Button
-        android:text="7"
+        android:text="@string/_7"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:background="#333333"
@@ -165,7 +165,7 @@
         android:layout_width="400dp" />
 
     <TextView
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textColor="#00ff00"
         android:layout_width="100dp"
         android:layout_height="50dp"
@@ -178,5 +178,4 @@
         android:layout_alignParentRight="true"
         android:gravity="center"
         android:layout_alignParentEnd="true" />
-
 </RelativeLayout>
